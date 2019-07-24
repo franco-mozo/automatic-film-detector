@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Registrado automático de film escaneado</title>
+<!--
+Neaty HTML Template
+http://www.templatemo.com/tm-501-neaty
+-->
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" href="css/magnific-popup.css">                                <!-- Magnific pop up style, http://dimsemenov.com/plugins/magnific-popup/ -->
+    <link rel="stylesheet" href="css/templatemo-style.css">                                   <!-- Templatemo style -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <![endif]-->
+</head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="tm-left-right-container">
+                    <!-- Left column: logo and menu -->
+                    <div class="tm-blue-bg tm-left-column">
+                        <div class="tm-logo-div text-xs-center">
+                            <img src="img/iie2015_300-600x344.png" alt="Logo" width="200" height="130">
+                            <h1 class="tm-site-name">Registrado automático de film escaneado</h1>
+                        </div>
+                        <nav class="tm-main-nav">
+                            <ul class="tm-main-nav-ul">
+                                <li class="tm-nav-item">
+                                    <a href="#introduccion" class="tm-nav-item-link">Introducción</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#adquisicion" class="tm-nav-item-link">Nacimiento del proyecto y adquisición de las imágenes</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#problema" class="tm-nav-item-link">Presentación del problema</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#implementacion" class="tm-nav-item-link">Implementación</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#resultados" class="tm-nav-item-link">Resultados</a>
+                                </li>
+                                <li class="tm-nav-item">
+                                    <a href="#agradecimientos" class="tm-nav-item-link">Agradecimientos</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div> <!-- Left column: logo and menu -->
+
+                    <!-- Right column: content -->
+                    <div class="tm-right-column">
+                        <figure>
+                            <img src="img/000441.jpg" alt="Header image" class="img-fluid" >
+                        </figure>
+
+                        <div class="tm-content-div">
+                            <!-- Introducción section -->
+                            <section id="introduccion" class="tm-section">
+                                <header>
+                                    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Introducción</h2>
+                                </header>
+                                <p> El Archivo General de la Universidad de la República dispone de diversas películas de 16 y 35 mm,
+                                    las cuales se encuentran digitalizando como forma de evitar la pérdida de este material cultural
+                                    e histórico debido al deterioro provocado por distintos agentes.
+                                </p>
+                                <p>
+                                    El propósito de este proyecto es crear una herramienta que logre la estabilización automática de
+                                    las imágenes obtenidas luego de la digitalización, de manera que permita apreciar las películas
+                                    de manera continua y sin saltos.
+                                </p>
+                            </section>
+
+                            <!-- Nacimiento y adquisición section -->
+                            <section id="adquisicion" class="tm-section">
+                                <header>
+                                    <h2 class="tm-blue-text tm-section-title tm-margin-b-45">Nacimiento del proyecto y adquisición de las imágenes</h2>
+                                </header>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-10 col-sm-12 col-xs-12 push-lg-6 push-md-5">
+                                        <p>
+                                            En el año 2007 fueron encontradas alrededor de 600 películas, las cuales se habían extraviado
+                                            durante la dictadura. Actualmente son propiedad de la Universidad de la República.
+                                        </p>
+                                        <p>
+                                            Con el objetivo de inspeccionar los datos historicos de las peliculas nació un proyecto con
+                                            gente de comunicación, bellas artes e ingeniería.
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-5 col-sm-3 col-xs-12 pull-lg-6 pull-md-7 tm-about-img-container">
+                                        <img src="img/maquina_adquisicion.jpg" alt="Image" class="img-fluid">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p>
+                                        Se recibió una donación del Banco República de la parte mecánica del equipo de adquisición (el
+                                        de la imagen). <br>
+                                        El mismo era utilizado originalmente para pasar este tipo de películas a señal de televisión a
+                                        finales de los años 90. El resto del equipo consiste en un Arduino Due el cual controla por PWM
+                                        la velocidad del motor que se encarga de hacer avanzar la película. La misma  mediante el sistema
+                                        mecánico. Cuando se detecta un cambio de fotograma mediante una fotocelda, se detiene el avance
+                                        y una cámara de 20 megapíxeles saca una foto. Este ciclo se repite hasta recorrer toda la película.
+                                    </p>
+                                </div>
+
+                            <!-- Presentación section -->
+                            <section id="problema" class="tm-section">
+                                <header>
+                                    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Presentación del problema</h2>
+                                </header>
+                                <p>
+                                    Se cuenta con secuencias de imágenes tomadas con el sistema previamente descrito de varias películas del
+                                    Archivo. Debido a las limitaciones en el sistema mecánico utilizado para su digitalización, las posiciones
+                                    de los films en las imágenes no es la misma de una a la siguiente. Es decir, la posicion relativa del
+                                    frame cuadro a cuadro varía. Sufre entonces, tanto rotaciones como traslaciones.
+                                    Además, se obtiene un área mayor a la del frame de la película, por lo que luego de la detección y
+                                    corrección se necesita una zona de recorte.
+                                    <br> Se observan ejemplos de films en la siguiente galería.
+                                </p>
+                            </section>
+
+                            <section class="tm-section">
+                                <header>
+                                    <h6 class="tm-color-text tm-section-title tm-margin-b-30">Imágenes de ejemplo</h6>
+                                </header>
+                                <div class="tm-gallery-container tm-gallery-1">
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/smp/000393.jpg"><img src="img/smp/000393.jpg" alt="Image" class="img-fluid tm-img-tn"></a>
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/smp/000899.jpg"><img src="img/smp/000899.jpg" alt="Image" class="img-fluid tm-img-tn"></a>
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/smp/000569.jpg"><img src="img/smp/000569.jpg" alt="Image" class="img-fluid tm-img-tn"></a>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <div>
+                                <p>
+                                    Se tiene además, que debido a como se tomaron las fotos, las películas pueden estar verticales,
+                                    horizontales o rotadas 180 grados.
+                                    <br> Se requiere entonces de un procesamiento posterior que se encargue de adecuar estas imágenes de
+                                    manera que permita la correcta visualización del material fílmico. Dada la gran cantidad de frames
+                                    que componen cada película, es conveniente que esto se realice con la menor intervención del usuario
+                                    posible, es decir, que sea procesado de forma automática.
+                                </p>
+
+                                <p>
+                                    Por lo tanto el programa encargado de este trabajo, para el film especificado por el usuario, debe
+                                    determinar la posición de los frames dentro de las imágenes para proceder con la conveniente
+                                    correción de orientación y límites de las mismas. A partir de esto continuar con la creación
+                                    del video según los fps requeridos. Los parámetros con que el programa realice el procesamiento
+                                    deben estar correctamente ajustados de manera que funcione para cualquier film en general,
+                                    independientemente de si es en blanco y negro o a color y de la imagen que se desarrolle dentro
+                                    de la película.
+                                </p>
+                            </div>
+
+                            <!-- Implementación section -->
+                            <section id="implementacion" class="tm-section">
+                                <header>
+                                    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Implementación</h2>
+                                </header>
+                                <p>
+                                    Debido a que las perforaciones se encuentran (casi) siempre en posiciones fijas en relación a los
+                                    frames, se comenzó intentando detectar de forma robusta las mismas. Una explicación detallada de la
+                                    implementación se encuentra más adelante.
+                                </p>
+                                <p>
+                                    En primera instancia, se optó por un sistema sin memoria. Es decir que el tramiento de las imágenes
+                                    fuera una a una, y no usando información global. El problema con este acercamiento es que, aunque la
+                                    detección de las perforaciones sea correcta, pequeñas fluctuaciones en la posición detectada de las
+                                    esquinas de las mismas y la posición real, provoca un salto en la imagen de un frame a otro. Se
+                                    implementó dicha idea y luego se descartó en base a lo observado.
+                                </p>
+                                <p>
+                                    Luego, se pensó y realizó matcheo de las imágenes usando detectores de características. Se utilizó
+                                    la implementación de OpenCV de ORB (Oriented FAST and Rotated BRIEF) y con los puntos cacterísticos
+                                    obtenidos se calculó una homografía para llevar las perforaciones al mismo lugar espacial. Debido a que
+                                    la transformación proyectiva deforma la imagen y no conserva el paralelismo, los frames quedan
+                                    mal y se descartó dicha opción también.
+                                </p>
+                                <p>
+                                    Se definió entonces utilizar la detección de perforaciones implementada en conjunto con rotaciones y
+                                    traslaciones para llevar a los frames a la posición deseada para su posterior detección.
+                                    Se implementó en Python y se utilizaron las bibliotecas:
+                                    <ul>
+                                        <li>OpenCV: 4.1.0</li>
+                                        <li>Matplotlib: 3.1.1</li>
+                                        <li>Numpy: 1.16.4</li>
+                                        <li>Scipy: 1.3.0</li>
+                                    </ul>
+
+                                    A diferencia de la primer idea, en la implementación final se utilizó información global del material
+                                    fílmico a tratar.
+                                </p>
+
+                                <header><h6 class="tm-color-text tm-section-title tm-margin-b-30">Idea final</h6></header>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-10 col-sm-12 col-xs-12 push-lg-6 push-md-5">
+                                        <p>
+                                            En la figura se observa la estructua general del proyecto en Python. El mismo se distribuye en
+                                            paquetes y subpaquetes que contiene funciones que se utilizan para la creación del film.
+                                            <br> Para la detección, se toma la primer imagen como template para adquirir las medidas
+                                            necesarias que se usarán para la correcta orientación del resto del film.
+
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-5 col-sm-3 col-xs-12 pull-lg-6 pull-md-7 tm-about-img-container">
+                                        <img src="img/tree.jpg" alt="Image" class="img-fluid">
+                                    </div>
+                                </div>
+
+                                <p>
+                                    Mediante binarización y tranformaciones morfológicas de erosión y dilatación, se segmentan
+                                    los espacios comprendidos por las perforaciones, de manera detectar las figuras geométricas
+                                    aproximables por rectángulos.
+                                    Debido a que dichas perforaciones cumplen cierta relación de
+                                    largo y ancho y el área de las mismas se encuentra en un rango de valores se utiliza esto
+                                    para filtrar lo que no son perforaciones. Esto se observa en las primeras tres imágenes de
+                                    la siguiente galería.
+                                </p>
+
+                                <section class="tm-section">
+                                    <header><h6 class="tm-color-text tm-section-title tm-margin-b-30">Galería</h6></header>
+                                    <div class="tm-gallery-container tm-gallery-2">
+                                        <div class="tm-img-container tm-img-container-1">
+                                            <a href="img/corrected.jpg"><img src="img/corrected.jpg" alt="Image" class="img-fluid tm-img-tn"></a>
+                                        </div>
+                                        <div class="tm-img-container tm-img-container-1">
+                                            <a href="img/000588.jpg"><img src="img/000588.jpg" alt="Image" class="img-fluid tm-img-tn"></a>
+                                        </div>
+                                        <div class="tm-img-container tm-img-container-1">
+                                            <a href="img/found_perf.png"><img src="img/found_perf.png" alt="Image" class="img-fluid tm-img-tn"></a>
+                                        </div>
+                                        <div class="tm-img-container tm-img-container-1">
+                                            <a href="img/found_perf_all.png"><img src="img/found_perf_all.png" alt="Image" class="img-fluid tm-img-tn"></a>
+                                        </div>
+                                        <div class="tm-img-container tm-img-container-1">
+                                            <a href="img/588.jpg"><img src="img/588.jpg" alt="Image" class="img-fluid tm-img-tn"></a>
+                                        </div>
+                                    </div>
+                                </section>
+
+
+                                <p>
+                                    Se observa que estas perforaciones suelen encontrarse a la izquierda del film. Sin embargo, de acuerdo
+                                    a la posición de la cámara con respecto al sistema mecánico, se tienen dos casos posibles: que estén
+                                    en el borde inferior y por lo tanto se deba girar 90º en sentido horario para que queden a la izquierda,
+                                    o que estén en el borde derecho, por lo que se debe girar 180º. Al tenerlo correctamente orientado,
+                                    las posiciones de los vértices anteriormente calculados ya no son correctos, entonces se corrige esto
+                                    para que se corresponda con la nueva posición de las perforaciones.
+                                </p>
+                                <p>
+                                    Se tiene en consideración, que además de la orientación grosera del film de ser vertical u horizontal
+                                    este se encuentre rotado también un pequeño angulo respecto de esta orientación mencionada. <br>
+                                    Debido a que las perforaciones son aproximadas por rectángulos y su detección se construyó con cierta
+                                    robustez, se toma cada una de ellas (es decir, para cada perforación), y para el par de esquinas superiores
+                                    e inferiores se calcula la pendiente de la recta que pasa por esos dos puntos. Se realiza esto para
+                                    todas las perforaciones halladas en el template, se promedian y se corrige este pequeño ángulo.
+                                </p>
+                                <p>
+                                     Se observa a contiuación el diagrama de bloques con la lógica del código implementado.
+                                </p>
+
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-10 col-sm-12 col-xs-12 push-lg-5 push-md-5">
+                                         <p>
+                                            A partir de aquí se tienen los datos necesarios para proceder con la alineación del resto de la
+                                            película. <br>
+                                            Para cada una de las imágenes se obtiene la posición de sus perforaciones bajo el mismo
+                                            procedimiento realizado anteriormente. Luego, calculando la distancia entre las equinas de estas
+                                            y la del template se trasladan y rotan todas las imágenes restantes del film y se logra hacerlas
+                                            coincidir.
+                                        </p>
+                                        <p>
+                                            Todos los pasos seguidos hasta este punto permiten que no se produzcan saltos entre fotograma
+                                            y fotograma mientras se visualiza la película. Ahora es posible continuar con la detección de
+                                            los bordes de los frames para deshacerse de todo lo que no pertenece al film. Se observa en la cuarta
+                                            foto de la galería de etapas, la primer imagen luego de aplicado este algoritmo.
+                                        </p>
+                                        <p>
+                                            Ahora para todas las imágenes alineadas previamente, se calculan las posiciones de las aristas de los
+                                            frames.
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-5 col-sm-3 col-xs-12 pull-lg-7 pull-md-7 tm-about-img-container">
+                                        <img src="img/flow.jpg" alt="Image" class="img-fluid" height="20">
+                                    </div>
+                                </div>
+                                <p>
+                                    Esto se logra aplicando un filtro laplaciano, y luego a la salida la transformada de Hough
+                                    para líneas a zonas delimitadas por las posiciones de las perforaciones.
+                                </p>
+                                <p>
+                                    Luego, es necesario recortar la imagen para el posterior armado de la película. En las primeras ideas
+                                    de implementaciones para realizar lo cometido, se optó por un análisis imagen a imagen. En esta, sin
+                                    embargo, se utilizó informacion global como ya fue mencionado.
+                                </p>
+                                <p>Se pueden tomar dos caminos posibles:
+                                    <ol>
+                                        <li>
+                                            Si entre todas las fotos se detectaron uno o más bordes superiores, inferiores, izquierdos
+                                            y derechos, se procede a calcular el promedio de todos estos para encontrar los límites que
+                                            mejor se adapten a todos los frames. Esto permite que el programa funcione correctamente
+                                            aunque no se detecten exactamente para alguna imagen en particular.
+                                        </li>
+                                        <li>
+                                            En caso de que no se pueda determinar alguno de estos cuatro bordes para ninguna de las
+                                            imágenes, como ocurre en caso de que la imagen esté muy ruidosa o si los colores del
+                                            frame son similares a los del fondo, se muestra al usuario una de las fotos ya alineadas
+                                            para que este marque manualmente la esquina superior izquierda y la inferior derecha. Ejemplo
+                                            de imagen ruidosa es la imagen 3 de las imágenes de ejemplo.
+                                        </li>
+                                    </ol>
+                                </p>
+                                <p>
+                                    A partir de los cuatro límites obtenidos se procede a recortar todas las imágenes para obtener
+                                    las que finalmente serán utilizadas para crear el video, el cual se guarda en memoria de forma
+                                    automatizada.
+                                </p>
+
+
+                            </section>
+
+                            <!-- Resultados section -->
+                            <section id="resultados" class="tm-section">
+                                <header>
+                                    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Resultados</h2>
+                                </header>
+                                <p>
+                                    Cuando se inicia el programa, se pide al usuario el nombre de la carpeta que contiene las
+                                    imágenes de los frames de la película de interés y la cantidad de fps (cuadros por segundo) que
+                                    tendrá el video posteriormente. Se utiliza el nombre de la carpeta para obtener los nombres
+                                    de los archivos .jpg contenidos en esta, y se devuelve las imágenes procesadas dentro de una
+                                    subcarpeta dentro de la misma.
+                                </p>
+                            </section>
+                            <!-- Third Gallery section -->
+                            <header><h6 class="tm-color-text tm-section-title tm-margin-b-30">Galería de resultados</h6></header>
+                            <p>
+                                Se observan a continuación algunos ejemplos de uso a modo ilustrativo. <br>
+                                En el primer gif se encuentra la película armada con las imágenes tales y como salieron de la cámara. <br>
+                                En la segunda columna se encuentra el video que se arma luego de la corrección de orientación y estabilización <br>
+                                Por último, en la tercera se encuentra el video ya recortado y armado.
+                            </p>
+
+                            <section  class="tm-section">
+                                <div class="tm-gallery-container tm-gallery-3">
+
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/result/film_4_dsp.gif"><img src="img/result/film_4_dsp.gif" alt="Image" class="img-fluid tm-img-tn"></a>
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/result/film_4_aligned.gif"><img src="img/result/film_4_aligned.gif" alt="Image" class="img-fluid tm-img-tn"></a>
+                                    </div>
+
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/result/film_4_antes.gif"><img src="img/result/film_4_antes.gif" alt="Image" class="img-fluid tm-img-tn"></a>
+                                    </div>
+
+                                </div>
+                            </section>
+
+                            <section  class="tm-section">
+                                <div class="tm-gallery-container tm-gallery-4">
+
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/result/film_5_dsp.gif"><img src="img/result/film_5_dsp.gif" alt="Image" class="img-fluid tm-img-tn"></a>
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/result/film_5_aligned.gif"><img src="img/result/film_5_aligned.gif" alt="Image" class="img-fluid tm-img-tn"></a>
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/result/film_5_antes.gif"><img src="img/result/film_5_antes.gif" alt="Image" class="img-fluid tm-img-tn"></a>
+                                    </div>
+
+                                </div>
+                            </section>
+
+                            <section  class="tm-section">
+                                <div class="tm-gallery-container tm-gallery-5">
+
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/result/film_3_dsp.gif"><img src="img/result/film_3_dsp.gif" alt="Image" class="img-fluid tm-img-tn"></a>
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/result/film_3_aligned.gif"><img src="img/result/film_3_aligned.gif" alt="Image" class="img-fluid tm-img-tn"></a>
+                                    </div>
+                                    <div class="tm-img-container tm-img-container-2">
+                                        <a href="img/result/film_3_antes.gif"><img src="img/result/film_3_antes.gif" alt="Image" class="img-fluid tm-img-tn"></a>
+                                    </div>
+                                </div>
+
+                                <p>
+                                    Se observan en los resultados la clara diferencia en la estabilidad de los frames antes y luego de la
+                                    correción. Se puede apreciar además en el segundo ejemplo que, a pesar de el estado del material
+                                    fílmico, el algoritmo de estabilización es considerablemente robusto, fallando en casos de extrema degradación
+                                    del material. <br>
+                                    Por otro lado, para el segundo ejemplo, se tiene que los colores y texturas dentro de los frames es sumamanete
+                                    ruidosa y con tonos oscuros al igual que el borde y exterior de este. En este caso, si se corre el programa se
+                                    observa que es necesario utilizar el mecanismo de emergencia de selección de las esquinas de un frame debido a
+                                    la imposibilidad de una detección correcta del borde del frame. Como fue mencionado, al correr el programa se
+                                    muestra una imagen de ejemplo, se marcan dos esquinas, y luego el programa sigue su curso para dar un output
+                                    correcto.
+                                </p>
+                            </section>
+
+
+                            <!-- Agradecimientos section -->
+                            <section id="agradecimientos" class="tm-section">
+                                <header>
+                                    <h2 class="tm-blue-text tm-welcome-title tm-margin-b-45">Agradecimientos</h2>
+                                </header>
+                                <p>Se agradece al personal del Archivo General de la Universidad por su gran disposición en el brindado de información y material que hicieron posible este trabajo.</p>
+                            </section>
+
+
+
+                            <footer>
+                                <p class="tm-copyright-p"> &copy; <span class="tm-current-year">2019</span>  |  Franco Mozo  -  Daiana
+                                    Aysa  |  Instituto de Ingeniería Eléctrica, Facultad de Ingeniería, Udelar.</p>
+                            </footer>
+                        </div>
+
+                    </div> <!-- Right column: content -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+
+        <!-- load JS files -->
+        <script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+        <script src="js/jquery.magnific-popup.min.js"></script>     <!-- Magnific pop-up (http://dimsemenov.com/plugins/magnific-popup/) -->
+        <script src="js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+        <script>
+
+            $(document).ready(function(){
+
+                // Single page nav
+                $('.tm-main-nav').singlePageNav({
+                    'currentClass' : "active",
+                    offset : 20
+                });
+
+                // Magnific pop up
+                $('.tm-gallery-1').magnificPopup({
+                  delegate: 'a', // child items selector, by clicking on it popup will open
+                  type: 'image',
+                  gallery: {enabled:true}
+                  // other options
+                });
+
+                $('.tm-gallery-2').magnificPopup({
+                  delegate: 'a', // child items selector, by clicking on it popup will open
+                  type: 'image',
+                  gallery: {enabled:true}
+                  // other options
+                });
+
+                $('.tm-gallery-3').magnificPopup({
+                  delegate: 'a', // child items selector, by clicking on it popup will open
+                  type: 'image',
+                  gallery: {enabled:true}
+                  // other options
+                });
+
+                $('.tm-gallery-4').magnificPopup({
+                  delegate: 'a', // child items selector, by clicking on it popup will open
+                  type: 'image',
+                  gallery: {enabled:true}
+                  // other options
+                });
+
+                $('.tm-gallery-5').magnificPopup({
+                  delegate: 'a', // child items selector, by clicking on it popup will open
+                  type: 'image',
+                  gallery: {enabled:true}
+                  // other options
+                });
+
+                $('.tm-current-year').text(new Date().getFullYear());
+            });
+        </script>
+</body>
+</html>
