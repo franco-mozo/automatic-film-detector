@@ -26,7 +26,7 @@
           - */movie/*:   las imagenes recortadas al film
           - */film/*:    se encuentra dos films armados con las imagenes generadas en las dos carpetas anteriores
  3. Si todo sale bien, se muestra en pantalla:
-     - Done :::: SUCESS ::::
+     - Done :::: SUCCESS ::::
 
 > Ejemplo de uso:
  - Supongase que se tiene imagenes del film escaneado en la carpeta 'film_x' dentro del directorio './imagenes'. Desde consola situado en el root del repositorio:
@@ -35,6 +35,6 @@
      - Ok
      - Ingrese número de fps: 30
      - Ok
-     - Done :::: SUCESS ::::
+     - Done :::: SUCCESS ::::
      
      
